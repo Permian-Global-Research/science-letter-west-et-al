@@ -16,7 +16,8 @@ funcs <- list.files("R", pattern = ".r$", full.names = TRUE) |>
 safe_create("geo-data")
 safe_create("figures")
 
-# Extract data
+# Extract data included in the repo - downloaded from:
+# https://dataverse.nl/dataset.xhtml?persistentId=doi:10.34894/IQC9LM
 extract_west_data()
 
 # - Colombia Project 856 -------------------------------------------------------
