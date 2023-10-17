@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Response to West et al. (2023)",
+    "section": "",
+    "text": "Letter\nAvoided Deforestation Conservation Projects (ADCP) must deliver carbon emission reductions and necessitate comparisons between observations in protected forests and counterfactual scenarios. West et al.1 used the synthetic control (SC) method to choose pools of controls with similar covariate structure to ADCP. The SC is calculated from the mean deforestation rate of pools, weighted by covariate similarity with the project. We agree SC could improve the evaluation of ADCP. However, SC are also vulnerable to “gaming” or bias through inappropriate donor pool design/sampling and require further refinement before they can improve upon existing ADCP approaches.\nWest et al.1 claim that most ADCP overestimate avoided deforestation or do not significantly reduce deforestation. These claims are misleading or inaccurate for these reasons:\nThe current implementation of SC can suffer from bias2 due to substantial and incompatible differences between deforestation drivers, forest structure and geography that are not captured. Important covariates are ignored, such as: distance to roads3, or indicators of forest structure that predict timber value and logging effort. Using the authors’ code, we extracted the locations of controls used to create the SC for project-856 (Figure 1), located in Pacific montane-forest. No donors were located in the same state or ecoregion and the highest weighted donor (0.46) was 900 km away in the Amazon.\nCalculations derived from Global Forest Change (GFC) data4 inherit known sensitivity and accuracy issues5,6. It is inappropriate to compare GFC-based calculations with those reported by projects, that should be better calibrated for local contexts, because meaningful comparisons require deforestation rates be derived using the same approach. Further, it is accepted that GFC is inappropriate for site-level deforestation assessment, in isolation6,7.\nSC counterfactuals were never demonstrated to be more accurate than methods reported by projects, which confounds the ability to interpret differences between the SC and project-reported deforestation rates.\n\n\n\nFigure 1: Map of the donor pool and their weighted contribution to the Synthetic Control for the Colombian Project 856, overlaying a map of Colombian ecoregions8 that intersect the weighted donors. Project-856was selected because it is the only one that the authors provide fully reproducible code for. To see interactive maps of this and all other projects please see … Elevation data from https://registry.opendata.aws/terrain-tiles.\n\n\n\n\n\n\n1. West, T. A. P., Wunder, S., Sills, E. O., Börner, J., Rifai, S. W., Neidermeier, A. N., Frey, G. P. & Kontoleon, A. Action needed to make carbon offsets from forest conservation work for climate change mitigation. Science 381, 873–877 (2023).\n\n\n2. Abadie, A. Using Synthetic Controls: Feasibility, Data Requirements, and Methodological Aspects. Journal of Economic Literature 59, 391–425 (2021).\n\n\n3. Laurance, W. F. & Arrea, I. B. Roads to riches or ruin? Science 358, 442–444 (2017).\n\n\n4. Hansen, M. C., Stehman, S. V. & Potapov, P. V. Quantification of global gross forest cover loss. Proceedings of the National Academy of Sciences 107, 8650–8655 (2010).\n\n\n5. Kinnebrew, E., Ochoa-Brito, J. I., French, M., Mills-Novoa, M., Shoffner, E. & Siegel, K. Biases and limitations of Global Forest Change and author-generated land cover maps in detecting deforestation in the Amazon. PLoS ONE 17, e0268970 (2022).\n\n\n6. Galiatsatos, N., Donoghue, D. N. M., Watt, P., Bholanath, P., Pickering, J., Hansen, M. C. & Mahmood, A. R. J. An Assessment of Global Forest Change Datasets for National Forest Monitoring and Reporting. Remote Sensing 12, 1790 (2020).\n\n\n7. Bos, A. B., De Sy, V., Duchelle, A. E., Herold, M., Martius, C. & Tsendbazar, N.-E. Global data and tools for local forest cover loss and REDD+ performance assessment: Accuracy, uncertainty, complementarity and impact. International Journal of Applied Earth Observation and Geoinformation 80, 295–311 (2019).\n\n\n8. Dinerstein, E., Olson, D., Joshi, A., Vynne, C., Burgess, N. D., Wikramanayake, E., Hahn, N., Palminteri, S., Hedao, P., Noss, R., Hansen, M., Locke, H., Ellis, E. C., Jones, B., Barber, C. V., Hayes, R., Kormos, C., Martin, V., Crist, E., Sechrest, W., Price, L., Baillie, J. E. M., Weeden, D., Suckling, K., Davis, C., Sizer, N., Moore, R., Thau, D., Birch, T., Potapov, P., Turubanova, S., Tyukavina, A., De Souza, N., Pintea, L., Brito, J. C., Llewellyn, O. A., Miller, A. G., Patzelt, A., Ghazanfar, S. A., Timberlake, J., Klöser, H., Shennan-Farpón, Y., Kindt, R., Lillesø, J.-P. B., Van Breugel, P., Graudal, L., Voge, M., Al-Shammari, K. F. & Saleem, M. An Ecoregion-Based Approach to Protecting Half the Terrestrial Realm. BioScience 67, 534–545 (2017)."
+  },
+  {
+    "objectID": "src/intro.html",
+    "href": "src/intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSeeknuth84? for additional discussion of literate programming."
+  },
+  {
+    "objectID": "src/summary.html",
+    "href": "src/summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "src/references.html",
+    "href": "src/references.html",
+    "title": "References",
+    "section": "",
+    "text": "1. West, T. A. P., Wunder, S., Sills, E. O.,\nBörner, J., Rifai, S. W., Neidermeier, A. N., Frey, G. P. &\nKontoleon, A. Action\nneeded to make carbon offsets from forest conservation work for climate\nchange mitigation. Science 381, 873–877\n(2023).\n\n\n2. Dinerstein, E., Olson, D., Joshi, A., Vynne,\nC., Burgess, N. D., Wikramanayake, E., Hahn, N., Palminteri, S., Hedao,\nP., Noss, R., Hansen, M., Locke, H., Ellis, E. C., Jones, B., Barber, C.\nV., Hayes, R., Kormos, C., Martin, V., Crist, E., Sechrest, W., Price,\nL., Baillie, J. E. M., Weeden, D., Suckling, K., Davis, C., Sizer, N.,\nMoore, R., Thau, D., Birch, T., Potapov, P., Turubanova, S., Tyukavina,\nA., De Souza, N., Pintea, L., Brito, J. C., Llewellyn, O. A., Miller, A.\nG., Patzelt, A., Ghazanfar, S. A., Timberlake, J., Klöser, H.,\nShennan-Farpón, Y., Kindt, R., Lillesø, J.-P. B., Van Breugel, P.,\nGraudal, L., Voge, M., Al-Shammari, K. F. & Saleem, M. An\nEcoregion-Based Approach to\nProtecting Half the Terrestrial\nRealm. BioScience 67, 534–545\n(2017).\n\n\n3. Abadie, A. Using Synthetic\nControls: Feasibility, Data\nRequirements, and Methodological\nAspects. Journal of Economic Literature\n59, 391–425 (2021).\n\n\n4. Hansen, M. C., Stehman, S. V. & Potapov, P.\nV. Quantification of\nglobal gross forest cover loss. Proceedings of the National\nAcademy of Sciences 107, 8650–8655 (2010).\n\n\n5. Kinnebrew, E., Ochoa-Brito, J. I., French, M.,\nMills-Novoa, M., Shoffner, E. & Siegel, K. Biases and\nlimitations of Global Forest\nChange and author-generated land cover maps in detecting\ndeforestation in the Amazon. PLoS ONE\n17, e0268970 (2022).\n\n\n6. Bos,\nA. B., De Sy, V., Duchelle, A. E., Herold, M., Martius, C. &\nTsendbazar, N.-E. Global data and tools\nfor local forest cover loss and REDD+ performance\nassessment: Accuracy, uncertainty, complementarity and\nimpact. International Journal of Applied Earth Observation and\nGeoinformation 80, 295–311 (2019).\n\n\n7. Galiatsatos, N., Donoghue, D. N. M., Watt, P.,\nBholanath, P., Pickering, J., Hansen, M. C. & Mahmood, A. R. J. An Assessment of\nGlobal Forest Change\nDatasets for National Forest\nMonitoring and Reporting. Remote\nSensing 12, 1790 (2020).\n\n\n8. Laurance, W. F. & Arrea, I. B. Roads to riches or\nruin? Science 358, 442–444 (2017)."
+  },
+  {
+    "objectID": "src/peru.html#project-0000",
+    "href": "src/peru.html#project-0000",
+    "title": "1  Peru",
+    "section": "1.1 Project-0000",
+    "text": "1.1 Project-0000\nmap…"
+  },
+  {
+    "objectID": "src/peru.html#project-0001",
+    "href": "src/peru.html#project-0001",
+    "title": "1  Peru",
+    "section": "1.2 Project-0001",
+    "text": "1.2 Project-0001\nmap…\netc."
+  },
+  {
+    "objectID": "src/colombia.html#project-856",
+    "href": "src/colombia.html#project-856",
+    "title": "2  Colombia",
+    "section": "2.1 Project-856",
+    "text": "2.1 Project-856\nmap…"
+  },
+  {
+    "objectID": "src/colombia.html#project-857",
+    "href": "src/colombia.html#project-857",
+    "title": "2  Colombia",
+    "section": "2.2 Project-857",
+    "text": "2.2 Project-857\nmap…\netc."
+  }
+]
