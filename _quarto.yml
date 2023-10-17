@@ -1,0 +1,78 @@
+project:
+  type: book
+  execute-dir: project
+
+book:
+  title: "Response to *West et al. (2023)*"
+  author: 
+    - name: "Hugh A. Graham"
+      orcid: "0000-0001-9451-5010"
+      email: "hugh.graham@permianglobal.com"
+      affiliations:
+      - id: pg
+        name: Permian Global Research Ltd.
+        address: 3 Cavendish Square
+        city: London
+        postal-code: W1G 0LB 
+      - id: exeter
+        name: University of Exeter
+        department: Geography, Faculty of Environment, Science and Economy
+        attributes:
+          corresponding: true
+    - name: "Andrew M. Cunliffe"
+      orcid: "0000-0002-8346-4278"
+      affiliations:
+        - ref: exeter
+    - name: "Edward T.A. Mitchard"
+      orcid: "0000-0002-5690-4055"
+      affiliations:
+        - id: si
+          name: Space Intelligence Ltd.
+          address: 93 George Street
+          city: Edinburgh
+          postal-code: EH2 3ES
+    - name: "Javier Ruiz Ramos"
+      orcid: "0000-0003-4210-3887"
+      affiliations:
+          - ref: pg
+    - name: "Leonardo Sáenz"
+      orcid: "0000-0002-4339-0833"
+      affiliations:
+          - ref: pg
+    - name: "Christopher Philipson"
+      orcid: "0000-0001-8987-7260"
+      affiliations:
+          - ref: pg
+  repo-url: https://github.com/Permian-Global-Research/science-letter-west-et-al
+  navbar:
+    search: false
+
+
+
+  date: "today"
+  chapters:
+    - index.qmd
+    - src/references.qmd
+    - part: "Interactive maps"
+      chapters:
+        - src/peru.qmd
+        - src/colombia.qmd
+        - src/drc.qmd
+        - src/tanzania.qmd
+        - src/zambia.qmd
+        - src/cambodia.qmd
+
+bibliography: src/references.bib
+csl: src/nature-no-et-al.csl
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    grid:
+      sidebar-width: 350px
+  pdf:
+    documentclass: scrreprt
+
+
+
