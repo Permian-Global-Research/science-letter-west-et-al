@@ -41,10 +41,3 @@ donor_map_wrapper <- function(sc_data, shp_file, country, proj_id, proj_start, d
         drc_regions$country
     )
 }
-
-mapview(drc_eco_regions, zcol = "ECO_NAME", legend = FALSE) +
-    mapview(donors,
-        zcol = "Donor mean SC weight",
-        col.regions = c("white", hcl.colors(100, "Inferno", direction = -1))
-    ) +
-    mapview(project_area, col.region = "red")
