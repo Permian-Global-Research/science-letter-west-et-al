@@ -34,7 +34,7 @@ donor_ggplot_map <- function(
         ) +
         ggplot2::scale_fill_gradientn(
             colours = c(hcl.colors(200, "Grays"), rep("white", 50)),
-            guide = FALSE,
+            guide = "none",
             trans = scales::pseudo_log_trans(sigma = 0.2, base = 100)
         ) +
         ggnewscale::new_scale_fill() +
@@ -54,7 +54,7 @@ donor_ggplot_map <- function(
             },
         ) +
         ggplot2::labs(fill = "Ecoregion") +
-        new_scale_fill() +
+        ggnewscale::new_scale_fill() +
         # map donors
         ggplot2::geom_sf(
             data = donr_centroids,
@@ -87,14 +87,16 @@ donor_ggplot_map <- function(
         # project area
         ggplot2::geom_sf(
             data = project_area_centroid,
-            mapping = aes(fill = sprintf("Project Area (%s)", project_name)),
+            mapping = ggplot2::aes(
+                fill = sprintf("Project Area (%s)", project_name)
+            ),
             colour = "white",
             size = 5,
             pch = 24
         ) +
         ggplot2::scale_fill_manual(values = "#ff0000") +
         ggplot2::labs(fill = "") +
-        ggplot2::guides(fill = guide_legend(order = 1)) +
+        ggplot2::guides(fill = ggplot2::guide_legend(order = 1)) +
         ggplot2::theme_minimal() +
         ggspatial::annotation_scale() +
         ggspatial::annotation_north_arrow(
@@ -162,13 +164,15 @@ generate_eco_regions <- function(project_area, donors, country) {
         )
 
     donor_wgs <- sf::st_transform(
-        filter(donors, zero == "non-zero"),
+        dplyr::filter(donors, zero == "non-zero"),
         sf::st_crs(eco_reg)
     ) |>
         dplyr::select(geometry) |>
-        dplyr::bind_rows(select(
-            sf::st_transform(project_area, st_crs(eco_reg)), geometry
-        ))
+        dplyr::bind_rows(
+            dplyr::select(
+                sf::st_transform(project_area, sf::st_crs(eco_reg)), geometry
+            )
+        )
 
 
     eco_reg2 <- eco_reg |>
@@ -179,7 +183,7 @@ generate_eco_regions <- function(project_area, donors, country) {
             contains_donor = dplyr::case_when(
                 id %in% eco_reg2$id ~ TRUE,
                 TRUE ~ FALSE
-            ), select_eco_name = case_when(
+            ), select_eco_name = dplyr::case_when(
                 contains_donor == TRUE ~ ECO_NAME,
                 TRUE ~ NA_character_
             )
