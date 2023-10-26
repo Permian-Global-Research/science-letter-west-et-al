@@ -1,15 +1,385 @@
 # Colombia
 
-Here are the maps for Colombia...
+
+```{r}
+#| label: Colombia-loading
+#| include: false
+source("R/load-all.r")
+colombia_lyrs <- country_map_lyrs("Colombia")
+```
 
 ## Project-856
+This project is the only one for which reproducible code was provided. We 
+therefore assume that the selected donors match those used in the publication. 
+The number of donors and the size of the donor pool match exactly what is 
+reported in *Table A9* of the supplementary materials. However, the locations 
+appear not to match those in *Fig. S4.*.
 
-map...
+```{r}
+#| label: fig-Colombia-856-sc
+#| fig-cap:  !expr paste0("Colombia-Project-856 synthetic control; comprising ", proj_856_count$n_weighted, " donors from a potential pool of ", proj_856_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_856_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+project_856 <- west_extract_proj_area(colombia_lyrs$country_sc_sp, 856)
+proj_856_donors_l <- sc_wrap_recursive(
+  filepath = colombia_lyrs$country_csv,
+  dbf_file = colombia_lyrs$country_dbf,
+  project_id = 856,
+  project_start_date = 2011,
+  project_name = "Colombia 856",
+  drop_controls = c(8851),
+  cutoff_start = 0.2,
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  )
+)
+
+proj_856_count <- count_donors(proj_856_donors_l)
+
+proj_856_donors <- proj_856_donors_l |>
+  locate_donors(colombia_lyrs$country_sc_sp)
+```
+```{r}
+#| label: fig-Colombia-856-map
+#| fig-cap: "Colombia-Project-856 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+donor_leaf_map(proj_donors=proj_856_donors, 
+  country_spat = colombia_lyrs$country,
+  country_name = "Colombia",
+  project_area = project_856,
+  proj_num = 856,
+  ecoregions=colombia_lyrs$ecoregions,
+  states = colombia_lyrs$states)
+
+```
+
+## Project-1390
+This SC matches that of the paper.
+```{r}
+#| label: fig-Colombia-1390
+#| fig-cap: !expr paste0("Colombia-Project-1390 synthetic control; comprising ", proj_1390_count$n_weighted, " donors from a potential pool of ", proj_1390_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1390_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1390 <- west_extract_proj_area(colombia_lyrs$country_sc_sp, 1390)
+
+proj_1390_donors_l <- sc_wrap_recursive(
+  filepath = colombia_lyrs$country_csv,
+  dbf_file = colombia_lyrs$country_dbf,
+  project_id = 1390,
+  project_start_date = 2013,
+  project_name = "Colombia 1390",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "palm", "mine", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c() 
+)
+
+proj_1390_count <- count_donors(proj_1390_donors_l)
+
+proj_1390_donors <- proj_1390_donors_l |>
+  locate_donors(colombia_lyrs$country_sc_sp)
+```
+```{r}
+#| label: fig-Colombia-1390-map
+#| fig-cap: "Colombia-Project-1390 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(proj_donors=proj_1390_donors,
+  country_spat = colombia_lyrs$country,
+  country_name = "Colombia",
+  project_area = project_1390,
+  proj_num = 1390,
+  ecoregions=colombia_lyrs$ecoregions,
+  states = colombia_lyrs$states)
+```
 
 
-## Project-857
+## Project-1391
 
-map...
+```{r}
+#| label: fig-Colombia-1391
+#| fig-cap: !expr paste0("Colombia-Project-1391 synthetic control; comprising ", proj_1391_count$n_weighted, " donors from a potential pool of ", proj_1391_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1391_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1391 <- west_extract_proj_area(colombia_lyrs$country_sc_sp, 1391)
+proj_1391_donors_l <- sc_wrap_recursive(
+  filepath = colombia_lyrs$country_csv,
+  dbf_file = colombia_lyrs$country_dbf,
+  project_id = 1391,
+  project_start_date = 2013,
+  project_name = "Colombia 1391",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "palm", "mine", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  cutoff_start = 0.3
+) 
+
+proj_1391_count <- count_donors(proj_1391_donors_l)
+
+proj_1391_donors <- proj_1391_donors_l |>
+  locate_donors(colombia_lyrs$country_sc_sp)
+
+```
+```{r}
+#| label: fig-Colombia-1391-map
+#| fig-cap: "Colombia-Project-1391 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+donor_leaf_map(proj_donors=proj_1391_donors,
+  country_spat = colombia_lyrs$country,
+  country_name = "Colombia",
+  project_area = project_1391,
+  proj_num = 1391,
+  ecoregions=colombia_lyrs$ecoregions,
+  states = colombia_lyrs$states)
+```
+
+## Project-1392
+
+```{r}
+#| label: fig-Colombia-1392
+#| fig-cap: !expr paste0("Colombia-Project-1392 synthetic control; comprising ", proj_1392_count$n_weighted, " donors from a potential pool of ", proj_1392_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1392_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1392 <- west_extract_proj_area(colombia_lyrs$country_sc_sp, 1392)
+proj_1392_donors_l <- sc_wrap_recursive(
+  filepath = colombia_lyrs$country_csv,
+  dbf_file = colombia_lyrs$country_dbf,
+  project_id = 1392,
+  project_start_date = 2013,
+  project_name = "Colombia 1392",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  cutoff_start = 0.2
+) 
+
+proj_1392_count <- count_donors(proj_1392_donors_l)
+
+proj_1392_donors <- proj_1392_donors_l |>
+  locate_donors(colombia_lyrs$country_sc_sp)
+
+```
+```{r}
+#| label: fig-Colombia-1392-map
+#| fig-cap: "Colombia-Project-1392 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+donor_leaf_map(proj_donors=proj_1392_donors,
+  country_spat = colombia_lyrs$country,
+  country_name = "Colombia",
+  project_area = project_1392,
+  proj_num = 1392,
+  ecoregions=colombia_lyrs$ecoregions,
+  states = colombia_lyrs$states)
+```
 
 
-etc.
+## Project-1395
+
+```{r}
+#| label: fig-Colombia-1395
+#| fig-cap: !expr paste0("Colombia-Project-1395 synthetic control; comprising ", proj_1395_count$n_weighted, " donors from a potential pool of ", proj_1395_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1395_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1395 <- west_extract_proj_area(colombia_lyrs$country_sc_sp, 1395)
+proj_1395_donors_l <- sc_wrap_recursive(
+  filepath = colombia_lyrs$country_csv,
+  dbf_file = colombia_lyrs$country_dbf,
+  project_id = 1395,
+  project_start_date = 2013,
+  project_name = "Colombia 1395",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "palm", "mine", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c() 
+) 
+
+proj_1395_count <- count_donors(proj_1395_donors_l)
+
+proj_1395_donors <- proj_1395_donors_l |>
+  locate_donors(colombia_lyrs$country_sc_sp)
+```
+```{r}
+#| label: fig-Colombia-1395-map
+#| fig-cap: "Colombia-Project-1395 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(proj_donors=proj_1395_donors,
+  country_spat = colombia_lyrs$country,
+  country_name = "Colombia",
+  project_area = project_1395,
+  proj_num = 1395,
+  ecoregions=colombia_lyrs$ecoregions,
+  states = colombia_lyrs$states)
+```
+
+## Project-1396
+
+```{r}
+#| label: fig-Colombia-1396
+#| fig-cap: !expr paste0("Colombia-Project-1396 synthetic control; comprising ", proj_1396_count$n_weighted, " donors from a potential pool of ", proj_1396_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1396_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1396 <- west_extract_proj_area(colombia_lyrs$country_sc_sp, 1396)
+
+proj_1396_donors_l <- sc_wrap_recursive(
+  filepath = colombia_lyrs$country_csv,
+  dbf_file = colombia_lyrs$country_dbf,
+  project_id = 1396,
+  project_start_date = 2013,
+  project_name = "Colombia 1396",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "palm", "mine", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  cutoff_start = 0.2
+) 
+
+proj_1396_count <- count_donors(proj_1396_donors_l)
+
+proj_1396_donors <- proj_1396_donors_l |>
+  locate_donors(colombia_lyrs$country_sc_sp)
+```
+```{r}
+#| label: fig-Colombia-1396-map
+#| fig-cap: "Colombia-Project-1396 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(proj_donors=proj_1396_donors,
+  country_spat = colombia_lyrs$country,
+  country_name = "Colombia",
+  project_area = project_1396,
+  proj_num = 1396,
+  ecoregions=colombia_lyrs$ecoregions,
+  states = colombia_lyrs$states)
+```
+
+
+## Project-1400
+
+```{r}
+#| label: fig-Colombia-1400
+#| fig-cap: !expr paste0("Colombia-Project-1400 synthetic control; comprising ", proj_1400_count$n_weighted, " donors from a potential pool of ", proj_1400_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1400_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1400 <- west_extract_proj_area(colombia_lyrs$country_sc_sp, 1400)
+
+proj_1400_donors_l <- sc_wrap_recursive(
+  filepath = colombia_lyrs$country_csv,
+  dbf_file = colombia_lyrs$country_dbf,
+  project_id = 1400,
+  project_start_date = 2013,
+  project_name = "Colombia 1400",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "palm", "mine", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c() 
+) 
+
+proj_1400_count <- count_donors(proj_1400_donors_l)
+
+proj_1400_donors <- proj_1400_donors_l |>
+  locate_donors(colombia_lyrs$country_sc_sp)
+```
+```{r}
+#| label: fig-Colombia-1400-map
+#| fig-cap: "Colombia-Project-1400 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(proj_donors=proj_1400_donors,
+  country_spat = colombia_lyrs$country,
+  country_name = "Colombia",
+  project_area = project_1400,
+  proj_num = 1400,
+  ecoregions=colombia_lyrs$ecoregions,
+  states = colombia_lyrs$states)
+```
+
+## Project-1566
+
+```{r}
+#| label: fig-Colombia-1566
+#| fig-cap: !expr paste0("Colombia-Project-1566 synthetic control; comprising ", proj_1566_count$n_weighted, " donors from a potential pool of ", proj_1566_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1566_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1566 <- west_extract_proj_area(colombia_lyrs$country_sc_sp, 1566)
+
+proj_1566_donors_l <- sc_wrap_recursive(
+  filepath = colombia_lyrs$country_csv,
+  dbf_file = colombia_lyrs$country_dbf,
+  project_id = 1566,
+  project_start_date = 2013,
+  project_name = "Colombia 1566",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "mine", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  cutoff_start = 0.3
+) 
+
+proj_1566_count <- count_donors(proj_1566_donors_l)
+
+proj_1566_donors <- proj_1566_donors_l |>
+  locate_donors(colombia_lyrs$country_sc_sp)
+```
+```{r}
+#| label: fig-Colombia-1566-map
+#| fig-cap: "Colombia-Project-1566 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(proj_donors=proj_1566_donors,
+  country_spat = colombia_lyrs$country,
+  country_name = "Colombia",
+  project_area = project_1566,
+  proj_num = 1566,
+  ecoregions=colombia_lyrs$ecoregions,
+  states = colombia_lyrs$states)
+```

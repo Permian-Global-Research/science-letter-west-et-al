@@ -1,1 +1,101 @@
 # Democratic Republic of Congo
+
+
+```{r}
+#| label: DRC-loading
+#| include: false
+source("R/load-all.r")
+drc_lyrs <- country_map_lyrs("DRC")
+```
+
+## Project-934
+
+```{r}
+#| label: fig-DRC-934-sc
+#| fig-cap:  !expr paste0("DRC-Project-934 synthetic control; comprising ", proj_934_count$n_weighted, " donors from a potential pool of ", proj_934_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_934_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_934 <- west_extract_proj_area(drc_lyrs$country_sc_sp, 934)
+
+proj_934_donors_l <- sc_wrap_recursive(
+  filepath = drc_lyrs$country_csv,
+  dbf_file = drc_lyrs$country_dbf,
+  project_id = 934,
+  project_start_date = 2011,
+  project_name = "DRC 934",
+  drop_controls = c(),
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "conservation", "mine", "timber",
+    "fric", "def", "defc", "mm", "buf10k_def", "buf10k_defc"
+  )
+)
+
+proj_934_count <- count_donors(proj_934_donors_l)
+
+proj_934_donors <- proj_934_donors_l |>
+  locate_donors(drc_lyrs$country_sc_sp)
+```
+```{r}
+#| label: fig-DRC-934-map
+#| fig-cap: "DRC-Project-934 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(proj_donors=proj_934_donors, 
+  country_spat = drc_lyrs$country,
+  country_name = "DRC",
+  project_area = project_934,
+  proj_num = 934,
+  ecoregions = drc_lyrs$ecoregions,
+  states = drc_lyrs$states)
+```
+
+
+
+
+## Project-1359
+
+```{r}
+#| label: fig-DRC-1359-sc
+#| fig-cap:  !expr paste0("DRC-Project-1359 synthetic control; comprising ", proj_1359_count$n_weighted, " donors from a potential pool of ", proj_1359_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1359_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+project_1359 <- west_extract_proj_area(drc_lyrs$country_sc_sp, 1359)
+proj_1359_donors_l <- sc_wrap_recursive(
+  filepath = drc_lyrs$country_csv,
+  dbf_file = drc_lyrs$country_dbf,
+  project_id = 1359,
+  project_start_date = 2009,
+  project_name = "DRC 1359",
+  drop_controls = c(),
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "conservation", "mine","timber", 
+    "fric", "def", "defc", "mm", "buf10k_def", "buf10k_defc"
+  )
+)
+
+proj_1359_count <- count_donors(proj_1359_donors_l)
+
+proj_1359_donors <- proj_1359_donors_l |>
+  locate_donors(drc_lyrs$country_sc_sp)
+```
+```{r}
+#| label: fig-DRC-1359-map
+#| fig-cap: "DRC-Project-1359 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+donor_leaf_map(proj_donors=proj_1359_donors, 
+  country_spat = drc_lyrs$country,
+  country_name = "DRC",
+  project_area = project_1359,
+  proj_num = 1359,
+  ecoregions = drc_lyrs$ecoregions,
+  states = drc_lyrs$states)
+```

@@ -1,1 +1,163 @@
 # Tanzania
+
+
+```{r}
+#| label: Tanzania-loading
+#| include: false
+source("R/load-all.r")
+tanzania_lyrs <- country_map_lyrs("Tanzania")
+```
+
+## Project-1325
+
+```{r}
+#| label: fig-Tanzania-1325
+#| fig.cap: !expr paste0("Tanzania-Project-1325 synthetic control; comprising ", proj_1325_count$n_weighted, " donors from a potential pool of ", proj_1325_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1325_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1325 <- west_extract_proj_area(tanzania_lyrs$country_sc_sp, 1325)
+
+proj_1325_donors_l <- sc_wrap_recursive(
+  filepath = tanzania_lyrs$country_csv,
+  dbf_file = tanzania_lyrs$country_dbf,
+  project_id = 1325,
+  project_start_date = 2011,
+  project_name = "Tanzania 1325",
+  predictors_list = c(
+    "tree", "pa", "slope", "dem", "mine", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  min_donors = 8
+)
+
+proj_1325_count <- count_donors(proj_1325_donors_l)
+
+proj_1325_donors <- proj_1325_donors_l |>
+  locate_donors(tanzania_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Tanzania-1325-map
+#| fig-cap: "Tanzania-Project-1325 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+donor_leaf_map(
+  proj_donors = proj_1325_donors,
+  country_spat = tanzania_lyrs$country,
+  country_name = "Tanzania",
+  project_area = project_1325,
+  proj_num = 1325,
+  ecoregions = tanzania_lyrs$ecoregions,
+  states = tanzania_lyrs$states
+)
+```
+
+## Project-1897
+
+```{r}
+#| label: fig-Tanzania-1897
+#| fig.cap: !expr paste0("Tanzania-Project-1897 synthetic control; comprising ", proj_1897_count$n_weighted, " donors from a potential pool of ", proj_1897_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1897_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1897 <- west_extract_proj_area(tanzania_lyrs$country_sc_sp, 1897)
+
+proj_1897_donors_l <- sc_wrap_recursive(
+  filepath = tanzania_lyrs$country_csv,
+  dbf_file = tanzania_lyrs$country_dbf,
+  project_id = 1897,
+  project_start_date = 2017,
+  project_name = "Tanzania 1897",
+  predictors_list = c(
+    "tree", "pa", "slope", "dem", "mine", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c()
+)
+
+proj_1897_count <- count_donors(proj_1897_donors_l)
+
+proj_1897_donors <- proj_1897_donors_l |>
+  locate_donors(tanzania_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Tanzania-1897-map
+#| fig-cap: "Tanzania-Project-1897 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(
+  proj_donors = proj_1897_donors,
+  country_spat = tanzania_lyrs$country,
+  country_name = "Tanzania",
+  project_area = project_1897,
+  proj_num = 1897,
+  ecoregions = tanzania_lyrs$ecoregions,
+  states = tanzania_lyrs$states
+)
+```
+
+
+
+## Project-1900
+
+```{r}
+#| label: fig-Tanzania-1900
+#| fig.cap: !expr paste0("Tanzania-Project-1900 synthetic control; comprising ", proj_1900_count$n_weighted, " donors from a potential pool of ", proj_1900_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1900_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1900 <- west_extract_proj_area(tanzania_lyrs$country_sc_sp, 1900)
+
+proj_1900_donors_l <- sc_wrap_recursive(
+  filepath = tanzania_lyrs$country_csv,
+  dbf_file = tanzania_lyrs$country_dbf,
+  project_id = 1900,
+  project_start_date = 2016,
+  project_name = "Tanzania 1900",
+  predictors_list = c(
+    "tree", "pa", "slope", "dem", "mine", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  min_donors = 1,
+  cutoff_start = 0.2
+)
+
+proj_1900_count <- count_donors(proj_1900_donors_l)
+
+proj_1900_donors <- proj_1900_donors_l |>
+  locate_donors(tanzania_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Tanzania-1900-map
+#| fig-cap: "Tanzania-Project-1900 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(
+  proj_donors = proj_1900_donors,
+  country_spat = tanzania_lyrs$country,
+  country_name = "Tanzania",
+  project_area = project_1900,
+  proj_num = 1900,
+  ecoregions = tanzania_lyrs$ecoregions,
+  states = tanzania_lyrs$states
+)
+```

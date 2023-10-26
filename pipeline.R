@@ -1,4 +1,6 @@
 renv::restore()
+# Source all R files in the R directory
+source("R/load-all.r")
 # West packages
 library(plyr)
 library(Synth) # synthetic control package
@@ -7,9 +9,6 @@ library(foreign)
 
 # additional packages are loaded from files in 'R/' directly.
 
-# Source all R files in the R directory
-funcs <- list.files("R", pattern = ".r$", full.names = TRUE) |>
-    purrr::walk(source)
 
 
 # Set up out paths:
@@ -22,24 +21,20 @@ extract_west_data()
 
 # - Colombia Project 856 -------------------------------------------------------
 
-# get data for the Colombia 856 project
-col_856_data <- sc_project_data(
-    filepath = dp("Colombia_synth_control_data.csv"),
-    dbf_file = dp(
-        "Colombia_polygons.dbf",
-        "west-data/West et al. (2023) data/Shapefiles"
-    ),
-    project_id = 856,
-    project_start_date = 2011,
-    project_name = "Colombia 856",
-    cutoff = 0.2,
-    drop_controls = c(8851)
+col_856_donor_list <- sc_wrap_recursive(
+  filepath = dp("Colombia_synth_control_data.csv"),
+  dbf_file = dp(
+    "Colombia_polygons.dbf",
+    "west-data/West et al. (2023) data/Shapefiles"
+  ),
+  project_id = 856,
+  project_start_date = 2011,
+  project_name = "Colombia 856",
+  drop_controls = c(8851),
+  cutoff_start = 0.2
 )
 
-col_856_donor_list <- synth_control_run(
-    project_data = col_856_data,
-    donor_prop = 1
-)
+count_donors(col_856_donor_list)
 
 # read the spatial data for Colombia from West
 sc_columbia_sp <- read_west_spatial("Colombia_polygons.shp")
@@ -56,19 +51,19 @@ colombia_regions <- states_and_country("colombia")
 hillshade <- generate_hillshade(colombia_regions$country)
 # get the eco regions
 col_eco_regions <- generate_eco_regions(
-    project_area,
-    donors,
-    colombia_regions$country
+  project_area,
+  donors,
+  colombia_regions$country
 )
 
 p <- donor_ggplot_map(
-    project_area,
-    donors,
-    colombia_regions$country,
-    col_eco_regions,
-    hillshade
+  project_area,
+  donors,
+  colombia_regions$country,
+  col_eco_regions,
+  hillshade
 )
 
 ggplot2::ggsave("figures/colombia_856_donors.png", p,
-    width = 10, height = 10, bg = "white"
+  width = 10, height = 10, bg = "white"
 )

@@ -1,13 +1,24 @@
-# Letter {.unnumbered}
+## Preface {.unnumbered}
+Contained in this web page are interactive maps for each of the projects considered
+in West et al. @west_action_2023. We focus here on the project-level analysis, 
+undertaken as part of this publication, where the authors constructed synthetic 
+controls (SC) from randomly distributed circular donors from across the country of 
+each project. In the supplementary materials for the paper, only the code to 
+reproduce results for the *Colombian Project 856* were provided. 
 
-Avoided Deforestation Conservation Projects (ADCP) must deliver carbon emission reductions and necessitate comparisons between observations in protected forests and counterfactual scenarios. West et al. @west_action_2023 used the synthetic control (SC) method to choose pools of controls with similar covariate structure to ADCP. The SC is calculated from the mean deforestation rate of pools, weighted by covariate similarity with the project. We agree SC could improve the evaluation of ADCP. However, SC are also vulnerable to “gaming” or bias through inappropriate donor pool design/sampling and require further refinement before they can improve upon existing ADCP approaches. 
+We have attempted to reproduce the results across all considered projects in an 
+attempt to evaluate whether potential issues, identified for project 856 exist 
+more generally for other project synthetic controls. In order to reproduce the results for the remaining sites, we are missing *"problematic donors"* excluded from the SC matching step and the filtering 
+threshold for buffer area deforestation rates. We have automated the filtering 
+threshold such that when too few donors are selected or an error results from the SC 
+matching, the process is rerun with the threshold increased by 10%.
 
- West et al. @west_action_2023 claim that most ADCP overestimate avoided deforestation or do not significantly reduce deforestation. These claims are misleading or inaccurate for these reasons: 
+Therefore, the maps presented here do not precisely match those presented by 
+the authors in the Supplementary Materials (*Fig. S4.*) - we consider this 
+exercise important for our understanding of the general applicability of the 
+methods and to what extent they improve on existing manual/selective evidenced
+based methods that are currently adopted.
 
-The current implementation of SC can suffer from bias @abadie_using_2021 due to substantial and incompatible differences between deforestation drivers, forest structure and geography that are not captured. Important covariates are ignored, such as: distance to roads @laurance_roads_2017, or indicators of forest structure that predict timber value and logging effort. Using the authors’ code, we extracted the locations of controls used to create the SC for project-856 (@fig-1), located in Pacific montane-forest. No donors were located in the same state or ecoregion and the highest weighted donor (0.46) was 900 km away in the Amazon.  
 
-Calculations derived from Global Forest Change (GFC) data @hansen_quantification_2010 inherit known sensitivity and accuracy issues [@kinnebrew_biases_2022; @galiatsatos_assessment_2020]. It is inappropriate to compare GFC-based calculations with those reported by projects, that should be better calibrated for local contexts, because meaningful comparisons require deforestation rates be derived using the same approach. Further, it is accepted that GFC is inappropriate for site-level deforestation assessment, in isolation [@galiatsatos_assessment_2020; @bos_global_2019]. 
-
-SC counterfactuals were never demonstrated to be more accurate than methods reported by projects, which confounds the ability to interpret differences between the SC and project-reported deforestation rates. 
-
-![Map of the donor pool and their weighted contribution to the Synthetic Control for the Colombian Project 856, overlaying a map of Colombian ecoregions @dinerstein_ecoregion-based_2017 that intersect the weighted donors.  Project-856was selected because it is the only one that the authors provide fully reproducible code for. To see interactive maps of this and all other projects please see ... Elevation data from https://registry.opendata.aws/terrain-tiles.](figures/colombia_856_donors.png){#fig-1 width=100%}
+::: {#refs}
+:::

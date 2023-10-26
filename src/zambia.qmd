@@ -1,1 +1,162 @@
 # Zambia
+
+
+```{r}
+#| label: Zambia-loading
+#| include: false
+source("R/load-all.r")
+zambia_lyrs <- country_map_lyrs("Zambia")
+```
+
+## Project-17752
+
+```{r}
+#| label: fig-Zambia-17752
+#| fig.cap: !expr paste0("Zambia-Project-17752 synthetic control; comprising ", proj_17752_count$n_weighted, " donors from a potential pool of ", proj_17752_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_17752_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_17752 <- west_extract_proj_area(zambia_lyrs$country_sc_sp, 17752)
+
+proj_17752_donors_l <- sc_wrap_recursive(
+  filepath = zambia_lyrs$country_csv,
+  dbf_file = zambia_lyrs$country_dbf,
+  project_id = 17752,
+  project_start_date = 2015,
+  project_name = "Zambia 17752",
+  predictors_list = c(
+    "tree", "slope", "dem", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  min_donors = 2
+)
+
+proj_17752_count <- count_donors(proj_17752_donors_l)
+
+proj_17752_donors <- proj_17752_donors_l |>
+  locate_donors(zambia_lyrs$country_sc_sp)
+
+```
+
+
+```{r}
+#| label: fig-Zambia-17752-map
+#| fig-cap: "Zambia-Project-17752 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+donor_leaf_map(
+  proj_donors = proj_17752_donors,
+  country_spat = zambia_lyrs$country,
+  country_name = "Zambia",
+  project_area = project_17752,
+  proj_num = 17752,
+  ecoregions = zambia_lyrs$ecoregions,
+  states = zambia_lyrs$states
+)
+```
+
+## Project-17753
+
+```{r}
+#| label: fig-Zambia-17753
+#| fig.cap: !expr paste0("Zambia-Project-17753 synthetic control; comprising ", proj_17753_count$n_weighted, " donors from a potential pool of ", proj_17753_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_17753_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_17753 <- west_extract_proj_area(zambia_lyrs$country_sc_sp, 17753)
+
+proj_17753_donors_l <- sc_wrap_recursive(
+  filepath = zambia_lyrs$country_csv,
+  dbf_file = zambia_lyrs$country_dbf,
+  project_id = 17753,
+  project_start_date = 2015,
+  project_name = "Zambia 17753",
+  predictors_list = c(
+    "tree", "slope", "dem", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  min_donors = 2
+)
+
+proj_17753_count <- count_donors(proj_17753_donors_l)
+
+proj_17753_donors <- proj_17753_donors_l |>
+  locate_donors(zambia_lyrs$country_sc_sp)
+
+```
+  
+```{r}
+#| label: fig-Zambia-17753-map
+#| fig-cap: "Zambia-Project-17753 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(
+  proj_donors = proj_17753_donors,
+  country_spat = zambia_lyrs$country,
+  country_name = "Zambia",
+  project_area = project_17753,
+  proj_num = 17753,
+  ecoregions = zambia_lyrs$ecoregions,
+  states = zambia_lyrs$states
+)
+```
+
+## Project-1202
+
+```{r}
+#| label: fig-Zambia-1202
+#| fig.cap: !expr paste0("Zambia-Project-1202 synthetic control; comprising ", proj_1202_count$n_weighted, " donors from a potential pool of ", proj_1202_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1202_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1202 <- west_extract_proj_area(zambia_lyrs$country_sc_sp, 1202)
+
+proj_1202_donors_l <- sc_wrap_recursive(
+  filepath = zambia_lyrs$country_csv,
+  dbf_file = zambia_lyrs$country_dbf,
+  project_id = 1202,
+  project_start_date = 2009,
+  project_name = "Zambia 1202",
+  predictors_list = c(
+    "tree", "pa", "slope", "dem", "fric", "def",
+    "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  min_donors = 5
+)
+
+proj_1202_count <- count_donors(proj_1202_donors_l)
+
+proj_1202_donors <- proj_1202_donors_l |>
+  locate_donors(zambia_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Zambia-1202-map
+#| fig-cap: "Zambia-Project-1202 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(
+  proj_donors = proj_1202_donors,
+  country_spat = zambia_lyrs$country,
+  country_name = "Zambia",
+  project_area = project_1202,
+  proj_num = 1202,
+  ecoregions = zambia_lyrs$ecoregions,
+  states = zambia_lyrs$states
+)
+```

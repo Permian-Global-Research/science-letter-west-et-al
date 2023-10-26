@@ -2,12 +2,418 @@
 
 Here are some maps for Peru...
 
-## Project-0000
 
-map...
+```{r}
+#| label: Peru-loading
+#| include: false
+source("R/load-all.r")
+peru_lyrs <- country_map_lyrs("Peru")
+```
 
-## Project-0001
+## Project-844
+  
+```{r}
+#| label: fig-Peru-844
+#| fig-cap: !expr paste0("Peru-Project-844 synthetic control; comprising ", proj_844_count$n_weighted, " donors from a potential pool of ", proj_844_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_844_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
 
-map...
+project_844 <- west_extract_proj_area(peru_lyrs$country_sc_sp, 844)
 
-etc.
+proj_844_donors_l <- sc_wrap_recursive(
+  filepath = peru_lyrs$country_csv,
+  dbf_file = peru_lyrs$country_dbf,
+  project_id = 844,
+  project_start_date = 2018,
+  project_name = "Peru 844",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "mine", "timber",
+    "fric", "def", "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  min_donors = 5,
+  cutoff_start = 0.5
+)
+
+proj_844_count <- count_donors(proj_844_donors_l)
+
+proj_844_donors <- proj_844_donors_l |>
+  locate_donors(peru_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Peru-844-map
+#| fig-cap: "Peru-Project-844 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(
+  proj_donors = proj_844_donors,
+  country_spat = peru_lyrs$country,
+  country_name = "Peru",
+  project_area = project_844,
+  proj_num = 844,
+  ecoregions = peru_lyrs$ecoregions,
+  states = peru_lyrs$states
+)
+```
+
+## Project-944
+
+```{r}
+#| label: fig-Peru-944
+#| fig-cap: !expr paste0("Peru-Project-944 synthetic control; comprising ", proj_944_count$n_weighted, " donors from a potential pool of ", proj_944_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_944_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_944 <- west_extract_proj_area(peru_lyrs$country_sc_sp, 944)
+
+proj_944_donors_l <- sc_wrap_recursive(
+  filepath = peru_lyrs$country_csv,
+  dbf_file = peru_lyrs$country_dbf,
+  project_id = 944,
+  project_start_date = 2009,
+  project_name = "Peru 944",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "mine", "timber",
+    "fric", "def", "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c()
+)
+
+proj_944_count <- count_donors(proj_944_donors_l)
+
+proj_944_donors <- proj_944_donors_l |>
+  locate_donors(peru_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Peru-944-map
+#| fig-cap: "Peru-Project-944 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(
+  proj_donors = proj_944_donors,
+  country_spat = peru_lyrs$country,
+  country_name = "Peru",
+  project_area = project_944,
+  proj_num = 944,
+  ecoregions = peru_lyrs$ecoregions,
+  states = peru_lyrs$states
+)
+```
+
+## Project-958
+
+```{r}
+#| label: fig-Peru-958
+#| fig-cap: !expr paste0("Peru-Project-958 synthetic control; comprising ", proj_958_count$n_weighted, " donors from a potential pool of ", proj_958_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_958_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_958 <- west_extract_proj_area(peru_lyrs$country_sc_sp, 958)
+
+proj_958_donors_l <- sc_wrap_recursive(
+  filepath = peru_lyrs$country_csv,
+  dbf_file = peru_lyrs$country_dbf,
+  project_id = 958,
+  project_start_date = 2011,
+  project_name = "Peru 958",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "mine", "timber",
+    "fric", "def", "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  min_donors = 4
+)
+
+proj_958_count <- count_donors(proj_958_donors_l)
+
+proj_958_donors <- proj_958_donors_l |>
+  locate_donors(peru_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Peru-958-map
+#| fig-cap: "Peru-Project-958 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(
+  proj_donors = proj_958_donors,
+  country_spat = peru_lyrs$country,
+  country_name = "Peru",
+  project_area = project_958,
+  proj_num = 958,
+  ecoregions = peru_lyrs$ecoregions,
+  states = peru_lyrs$states
+)
+```
+
+
+## Project-1067
+  
+```{r}
+#| label: fig-Peru-1067
+#| fig-cap: !expr paste0("Peru-Project-1067 synthetic control; comprising ", proj_1067_count$n_weighted, " donors from a potential pool of ", proj_1067_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1067_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_1067 <- west_extract_proj_area(peru_lyrs$country_sc_sp, 1067)
+
+proj_1067_donors_l <- sc_wrap_recursive(
+  filepath = peru_lyrs$country_csv,
+  dbf_file = peru_lyrs$country_dbf,
+  project_id = 1067,
+  project_start_date = 2018,
+  project_name = "Peru 1067",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "mine", "timber",
+    "fric", "def", "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c()
+)
+
+proj_1067_count <- count_donors(proj_1067_donors_l)
+
+proj_1067_donors <- proj_1067_donors_l |>
+  locate_donors(peru_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Peru-1067-map
+#| fig-cap: "*Peru-Project-1067 synthetic control map*"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(
+  proj_donors = proj_1067_donors,
+  country_spat = peru_lyrs$country,
+  country_name = "Peru",
+  project_area = project_1067,
+  proj_num = 1067,
+  ecoregions = peru_lyrs$ecoregions,
+  states = peru_lyrs$states
+)
+```
+
+## Project-1182
+We were unable to reproduce a reasonable synthetic control for this project...
+```{r}
+#| label: fig-Peru-1182
+#| fig-cap: !expr paste0("Peru-Project-1182 synthetic control; comprising ", proj_1182_count$n_weighted, " donors from a potential pool of ", proj_1182_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1182_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+#| eval: false
+
+project_1182 <- west_extract_proj_area(peru_lyrs$country_sc_sp, 1182)
+
+proj_1182_donors_l <- sc_wrap_recursive(
+  filepath = peru_lyrs$country_csv,
+  dbf_file = peru_lyrs$country_dbf,
+  project_id = 1182,
+  project_start_date = 2013,
+  project_name = "Peru 1182",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "mine", "timber",
+    "fric", "def", "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  min_donors = 6,
+  cutoff_start = 0.4
+)
+
+proj_1182_count <- count_donors(proj_1182_donors_l)
+
+proj_1182_donors <- proj_1182_donors_l |>
+  locate_donors(peru_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Peru-1182-map
+#| fig-cap: "Peru-Project-1182 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+#| eval: false
+
+donor_leaf_map(
+  proj_donors = proj_1182_donors,
+  country_spat = peru_lyrs$country,
+  country_name = "Peru",
+  project_area = project_1182,
+  proj_num = 1182,
+  ecoregions = peru_lyrs$ecoregions,
+  states = peru_lyrs$states
+)
+```
+
+
+## Project-2278
+
+```{r}
+#| label: fig-Peru-2278
+#| fig-cap: !expr paste0("Peru-Project-2278 synthetic control; comprising ", proj_2778_count$n_weighted, " donors from a potential pool of ", proj_2778_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_2278_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+project_2278 <- west_extract_proj_area(peru_lyrs$country_sc_sp, 2278)
+proj_2278_donors_l <- sc_wrap_recursive(
+  filepath = peru_lyrs$country_csv,
+  dbf_file = peru_lyrs$country_dbf,
+  project_id = 2278,
+  project_start_date = 2018,
+  project_name = "Peru 2278",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "mine", "timber",
+    "fric", "def", "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  min_donors = 2 # paper has 3 but can't make this work - ends up being 8 with higher cutoff
+)
+
+proj_2778_count <- count_donors(proj_2278_donors_l)
+
+proj_2278_donors <- proj_2278_donors_l |>
+  locate_donors(peru_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Peru-2278-map
+#| fig-cap: "Peru-Project-1396 synthetic control map"
+#| echo: false
+#| message: false
+#| warning: false
+
+donor_leaf_map(
+  proj_donors = proj_2278_donors,
+  country_spat = peru_lyrs$country,
+  country_name = "Peru",
+  project_area = project_2278,
+  proj_num = 2278,
+  ecoregions = peru_lyrs$ecoregions,
+  states = peru_lyrs$states
+)
+```
+
+
+## Project - 13602
+
+```{r}
+#| label: fig-Peru-13602
+#| fig-cap: !expr paste0("Peru-Project-13602 synthetic control; comprising ", proj_13602_count$n_weighted, " donors from a potential pool of ", proj_13602_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_13602_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_13602 <- west_extract_proj_area(peru_lyrs$country_sc_sp, 13602)
+
+proj_13602_donors_l <- sc_wrap_recursive(
+  filepath = peru_lyrs$country_csv,
+  dbf_file = peru_lyrs$country_dbf,
+  project_id = 13602,
+  project_start_date = 2010,
+  project_name = "Peru 13602",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "mine", "timber",
+    "fric", "def", "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c(),
+  cutoff_start = 0.3
+)
+
+proj_13602_count <- count_donors(proj_13602_donors_l)
+
+proj_13602_donors <- proj_13602_donors_l |>
+  locate_donors(peru_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Peru-13602-map
+#| fig-cap: "Peru-Project-13602 synthetic control map"
+#| echo: false
+#| message: false
+
+donor_leaf_map(
+  proj_donors = proj_13602_donors,
+  country_spat = peru_lyrs$country,
+  country_name = "Peru",
+  project_area = project_13602,
+  proj_num = 13602,
+  ecoregions = peru_lyrs$ecoregions,
+  states = peru_lyrs$states
+)
+```
+
+## Project - 13603
+
+```{r}
+#| label: fig-Peru-13603
+#| fig-cap: !expr paste0("Peru-Project-13603 synthetic control; comprising ", proj_13603_count$n_weighted, " donors from a potential pool of ", proj_13603_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_13603_donors_l$cutoff)
+#| echo: false
+#| message: false
+#| warning: false
+#| results: hide
+
+project_13603 <- west_extract_proj_area(peru_lyrs$country_sc_sp, 13603)
+
+proj_13603_donors_l <- sc_wrap_recursive(
+  filepath = peru_lyrs$country_csv,
+  dbf_file = peru_lyrs$country_dbf,
+  project_id = 13603,
+  project_start_date = 2010,
+  project_name = "Peru 13603",
+  predictors_list = c(
+    "tree", "IL", "pa", "slope", "dem", "mine", "timber",
+    "fric", "def", "defc", "mm", "buf10k_def", "buf10k_defc"
+  ),
+  drop_controls = c()
+)
+
+proj_13603_count <- count_donors(proj_13603_donors_l)
+
+proj_13603_donors <- proj_13603_donors_l |>
+  locate_donors(peru_lyrs$country_sc_sp)
+
+```
+
+```{r}
+#| label: fig-Peru-13603-map
+#| fig-cap: "Peru-Project-13603 synthetic control map"
+#| echo: false
+#| message: false
+
+donor_leaf_map(
+  proj_donors = proj_13603_donors,
+  country_spat = peru_lyrs$country,
+  country_name = "Peru",
+  project_area = project_13603,
+  proj_num = 13603,
+  ecoregions = peru_lyrs$ecoregions,
+  states = peru_lyrs$states
+)
+```

@@ -52,11 +52,11 @@ book:
   date: "today"
   chapters:
     - index.qmd
-    - src/references.qmd
+    # - src/references.qmd
     - part: "Interactive maps"
       chapters:
-        - src/peru.qmd
         - src/colombia.qmd
+        - src/peru.qmd
         - src/drc.qmd
         - src/tanzania.qmd
         - src/zambia.qmd
@@ -71,8 +71,3 @@ format:
       dark: darkly
     grid:
       sidebar-width: 350px
-  pdf:
-    documentclass: scrreprt
-
-
-

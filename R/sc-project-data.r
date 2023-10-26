@@ -19,76 +19,76 @@ sc_project_data <- function(
     project_name,
     cutoff = 0.2,
     drop_controls = c()) {
-    redd_data <- read.csv(filepath)[, -1]
-    redd_data$polygon_name <- as.character(redd_data$polygon_ID)
+  redd_data <- read.csv(filepath)[, -1]
+  redd_data$polygon_name <- as.character(redd_data$polygon_ID)
 
-    # remove problematic control (varies by project/country) #WHY?
-    redd_data <- subset(redd_data, !polygon_ID %in% drop_controls)
+  # remove problematic control (varies by project/country) #WHY?
+  redd_data <- subset(redd_data, !polygon_ID %in% drop_controls)
 
-    projects <- subset(redd_data, REDD == 1)
-    unique(projects$ID)
-    # select one REDD project and delete the others and controls that should not be used
+  projects <- subset(redd_data, REDD == 1)
+  unique(projects$ID)
+  # select one REDD project and delete the others and controls that should not be used
 
-    redd_data <- subset(redd_data, ID == project_id) # keep only controls specific for the project
-    project <- subset(redd_data, REDD == 1)
+  redd_data <- subset(redd_data, ID == project_id) # keep only controls specific for the project
+  project <- subset(redd_data, REDD == 1)
 
-    # fix polygon area based on an updated shapefile
-    # HG - file path naming doesn't match their data! Assuming this refers to the
-    #      shapefiles so changing.
-    new <- foreign::read.dbf(dbf_file)
-    new$polygon_ha <- as.numeric(as.character(new$polygon_ha))
-    redd_data$polygon_ha <- new[match(
-        with(redd_data, polygon_ID),
-        with(new, polygon_ID)
-    ), ]$polygon_ha
+  # fix polygon area based on an updated shapefile
+  # HG - file path naming doesn't match their data! Assuming this refers to the
+  #      shapefiles so changing.
+  new <- foreign::read.dbf(dbf_file)
+  new$polygon_ha <- as.numeric(as.character(new$polygon_ha))
+  redd_data$polygon_ha <- new[match(
+    with(redd_data, polygon_ID),
+    with(new, polygon_ID)
+  ), ]$polygon_ha
 
-    # set treatment_identifier
-    treatment_identifier <- subset(redd_data, REDD == 1)[1, 5] # the polygon_ID
+  # set treatment_identifier
+  treatment_identifier <- subset(redd_data, REDD == 1)[1, 5] # the polygon_ID
 
-    # calculate deforestation risk before.data[0, ] project implementation
-    risk_project <- plyr::ddply(
-        .data = subset(project, year <= project_start_date),
-        .(polygon_ID), .fun = summarise, risk = mean(buf10k_def)
-    )
-    controls <- subset(redd_data, REDD != 1 & polygon_ID != treatment_identifier)
-    risk_control <- plyr::ddply(
-        .data = subset(controls, year <= project_start_date),
-        .(polygon_ID), .fun = summarise, risk = mean(buf10k_def)
-    )
+  # calculate deforestation risk before.data[0, ] project implementation
+  risk_project <- plyr::ddply(
+    .data = subset(project, year <= project_start_date),
+    .(polygon_ID), .fun = summarise, risk = mean(buf10k_def)
+  )
+  controls <- subset(redd_data, REDD != 1 & polygon_ID != treatment_identifier)
+  risk_control <- plyr::ddply(
+    .data = subset(controls, year <= project_start_date),
+    .(polygon_ID), .fun = summarise, risk = mean(buf10k_def)
+  )
 
-    # pre-subset
+  # pre-subset
 
-    risk_control$keep <- ifelse(
-        risk_control$risk >= risk_project[1, 2] * (1 - cutoff) &
-            risk_control$risk <= risk_project[1, 2] * (1 + cutoff),
-        1,
-        0
-    )
-    table(risk_control$keep)
+  risk_control$keep <- ifelse(
+    risk_control$risk >= risk_project[1, 2] * (1 - cutoff) &
+      risk_control$risk <= risk_project[1, 2] * (1 + cutoff),
+    1,
+    0
+  )
+  table(risk_control$keep)
 
-    controls$keep <- risk_control[match(
-        with(controls, polygon_ID),
-        with(risk_control, polygon_ID)
-    ), ]$keep
-    controls <- subset(controls, keep == 1)
-    project$keep <- 1
-    redd_data <- rbind(project, controls)
+  controls$keep <- risk_control[match(
+    with(controls, polygon_ID),
+    with(risk_control, polygon_ID)
+  ), ]$keep
+  controls <- subset(controls, keep == 1)
+  project$keep <- 1
+  redd_data <- rbind(project, controls)
 
-    # set controls.identifier
-    controls_identifier <- unique(controls$polygon_ID)
+  # set controls.identifier
+  controls_identifier <- unique(controls$polygon_ID)
 
-    unique(redd_data$polygon_ha)
-    redd_data$polygon_ha <- round(redd_data$polygon_ha, digits = 0)
+  unique(redd_data$polygon_ha)
+  redd_data$polygon_ha <- round(redd_data$polygon_ha, digits = 0)
 
-    out <- list(
-        data = redd_data,
-        control_id = controls_identifier,
-        treat_id = treatment_identifier,
-        proj_start = project_start_date,
-        proj_name = project_name
-    )
+  out <- list(
+    data = redd_data,
+    control_id = controls_identifier,
+    treat_id = treatment_identifier,
+    proj_start = project_start_date,
+    proj_name = project_name
+  )
 
-    class(out) <- "sc.project.data"
+  class(out) <- "sc.project.data"
 
-    return(out)
+  return(out)
 }
