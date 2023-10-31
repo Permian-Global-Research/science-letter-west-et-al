@@ -1,0 +1,191 @@
+[
+  {
+    "objectID": "index.html#preface",
+    "href": "index.html#preface",
+    "title": "Response to West et al. (2023)",
+    "section": "Preface",
+    "text": "Preface\nContained in this web book are interactive maps for each of the projects considered in West et al.1. We focus here on the project-level analysis, undertaken as part of this publication, where the authors constructed synthetic controls (SC) from randomly distributed circular donors from across the country of each project. In the supplementary materials for the paper, only the code to reproduce results for the Colombian Project 856 were provided.\nWe have attempted to reproduce the results across all considered projects in an attempt to evaluate whether potential issues, identified for project 856 exist more generally for other project synthetic controls. Further, it is an opportunity for us as researchers to gain a greater understanding of how the proposed method works.\nIn order to reproduce the results for the remaining sites, we are missing “problematic donors” excluded from the SC matching step and the filtering threshold for buffer area deforestation rates. We have automated the filtering threshold such that when too few donors are selected or an error results from the SC matching, the process is rerun with the threshold increased by 10%.\nTherefore, the maps presented here do not precisely match those presented by the authors in the Supplementary Materials (Fig. S4.). However, this exercise is still informative regarding the general applicability of the methods and to what extent they improve on existing manual/selective evidenced-based methods that are currently adopted.\n\n\n1. West, T. A. P., Wunder, S., Sills, E. O.,\nBörner, J., Rifai, S. W., Neidermeier, A. N., Frey, G. P. &\nKontoleon, A. Action\nneeded to make carbon offsets from forest conservation work for climate\nchange mitigation. Science 381, 873–877\n(2023)."
+  },
+  {
+    "objectID": "src/colombia.html#project-856",
+    "href": "src/colombia.html#project-856",
+    "title": "1  Colombia",
+    "section": "1.1 Project-856",
+    "text": "1.1 Project-856\nThis project is the only one for which reproducible code was provided. We therefore assume that the selected donors match those used in the publication. The number of donors and the size of the donor pool match exactly what is reported in Table A9 of the supplementary materials. However, the locations appear not to match those in Fig. S4..\n\n\n\n\n\nFigure 1.1: Colombia-Project-856 synthetic control; comprising 6 donors from a potential pool of 62 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.2\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.2: Colombia-Project-856 synthetic control map"
+  },
+  {
+    "objectID": "src/colombia.html#project-1390",
+    "href": "src/colombia.html#project-1390",
+    "title": "1  Colombia",
+    "section": "1.2 Project-1390",
+    "text": "1.2 Project-1390\nThis SC matches that of the paper.\n\n\n\n\n\nFigure 1.3: Colombia-Project-1390 synthetic control; comprising 4 donors from a potential pool of 109 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.2\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.4: Colombia-Project-1390 synthetic control map"
+  },
+  {
+    "objectID": "src/colombia.html#project-1391",
+    "href": "src/colombia.html#project-1391",
+    "title": "1  Colombia",
+    "section": "1.3 Project-1391",
+    "text": "1.3 Project-1391\n\n\n\n\n\nFigure 1.5: Colombia-Project-1391 synthetic control; comprising 4 donors from a potential pool of 87 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.3\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.6: Colombia-Project-1391 synthetic control map"
+  },
+  {
+    "objectID": "src/colombia.html#project-1392",
+    "href": "src/colombia.html#project-1392",
+    "title": "1  Colombia",
+    "section": "1.4 Project-1392",
+    "text": "1.4 Project-1392\n\n\n\n\n\nFigure 1.7: Colombia-Project-1392 synthetic control; comprising 5 donors from a potential pool of 38 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.2\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.8: Colombia-Project-1392 synthetic control map"
+  },
+  {
+    "objectID": "src/colombia.html#project-1395",
+    "href": "src/colombia.html#project-1395",
+    "title": "1  Colombia",
+    "section": "1.5 Project-1395",
+    "text": "1.5 Project-1395\n\n\n\n\n\nFigure 1.9: Colombia-Project-1395 synthetic control; comprising 5 donors from a potential pool of 44 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.1\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.10: Colombia-Project-1395 synthetic control map"
+  },
+  {
+    "objectID": "src/colombia.html#project-1396",
+    "href": "src/colombia.html#project-1396",
+    "title": "1  Colombia",
+    "section": "1.6 Project-1396",
+    "text": "1.6 Project-1396\n\n\n\n\n\nFigure 1.11: Colombia-Project-1396 synthetic control; comprising 8 donors from a potential pool of 100 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.2\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.12: Colombia-Project-1396 synthetic control map"
+  },
+  {
+    "objectID": "src/colombia.html#project-1400",
+    "href": "src/colombia.html#project-1400",
+    "title": "1  Colombia",
+    "section": "1.7 Project-1400",
+    "text": "1.7 Project-1400\n\n\n\n\n\nFigure 1.13: Colombia-Project-1400 synthetic control; comprising 3 donors from a potential pool of 48 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.1\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.14: Colombia-Project-1400 synthetic control map"
+  },
+  {
+    "objectID": "src/colombia.html#project-1566",
+    "href": "src/colombia.html#project-1566",
+    "title": "1  Colombia",
+    "section": "1.8 Project-1566",
+    "text": "1.8 Project-1566\n\n\n\n\n\nFigure 1.15: Colombia-Project-1566 synthetic control; comprising 8 donors from a potential pool of 147 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.3\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1.16: Colombia-Project-1566 synthetic control map"
+  },
+  {
+    "objectID": "src/peru.html#project-844",
+    "href": "src/peru.html#project-844",
+    "title": "2  Peru",
+    "section": "2.1 Project-844",
+    "text": "2.1 Project-844\n\n\n\n\n\nFigure 2.1: Peru-Project-844 synthetic control; comprising 6 donors from a potential pool of 211 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.7\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2.2: Peru-Project-844 synthetic control map"
+  },
+  {
+    "objectID": "src/peru.html#project-944",
+    "href": "src/peru.html#project-944",
+    "title": "2  Peru",
+    "section": "2.2 Project-944",
+    "text": "2.2 Project-944\n\n\n\n\n\nFigure 2.3: Peru-Project-944 synthetic control; comprising 3 donors from a potential pool of 58 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.6\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2.4: Peru-Project-944 synthetic control map"
+  },
+  {
+    "objectID": "src/peru.html#project-958",
+    "href": "src/peru.html#project-958",
+    "title": "2  Peru",
+    "section": "2.3 Project-958",
+    "text": "2.3 Project-958\n\n\n\n\n\nFigure 2.5: Peru-Project-958 synthetic control; comprising 5 donors from a potential pool of 80 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.4\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2.6: Peru-Project-958 synthetic control map"
+  },
+  {
+    "objectID": "src/peru.html#project-1067",
+    "href": "src/peru.html#project-1067",
+    "title": "2  Peru",
+    "section": "2.4 Project-1067",
+    "text": "2.4 Project-1067\n\n\n\n\n\nFigure 2.7: Peru-Project-1067 synthetic control; comprising 2 donors from a potential pool of 127 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.7\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2.8: Peru-Project-1067 synthetic control map"
+  },
+  {
+    "objectID": "src/peru.html#project-1182",
+    "href": "src/peru.html#project-1182",
+    "title": "2  Peru",
+    "section": "2.5 Project-1182",
+    "text": "2.5 Project-1182\nWe were unable to reproduce a reasonable synthetic control for this project…"
+  },
+  {
+    "objectID": "src/peru.html#project-2278",
+    "href": "src/peru.html#project-2278",
+    "title": "2  Peru",
+    "section": "2.6 Project-2278",
+    "text": "2.6 Project-2278\n\n\n\n\n\nFigure 2.9: Peru-Project-2278 synthetic control; comprising 2 donors from a potential pool of 129 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.6\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2.10: Peru-Project-1396 synthetic control map"
+  },
+  {
+    "objectID": "src/peru.html#project---13602",
+    "href": "src/peru.html#project---13602",
+    "title": "2  Peru",
+    "section": "2.7 Project - 13602",
+    "text": "2.7 Project - 13602\n\n\n\n\n\nFigure 2.11: Peru-Project-13602 synthetic control; comprising 3 donors from a potential pool of 47 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.3\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2.12: Peru-Project-13602 synthetic control map"
+  },
+  {
+    "objectID": "src/peru.html#project---13603",
+    "href": "src/peru.html#project---13603",
+    "title": "2  Peru",
+    "section": "2.8 Project - 13603",
+    "text": "2.8 Project - 13603\n\n\n\n\n\nFigure 2.13: Peru-Project-13603 synthetic control; comprising 3 donors from a potential pool of 68 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.5\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2.14: Peru-Project-13603 synthetic control map"
+  },
+  {
+    "objectID": "src/drc.html#project-934",
+    "href": "src/drc.html#project-934",
+    "title": "3  Democratic Republic of Congo",
+    "section": "3.1 Project-934",
+    "text": "3.1 Project-934\n\n\n\n\n\nFigure 3.1: DRC-Project-934 synthetic control; comprising 4 donors from a potential pool of 81 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.1\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3.2: DRC-Project-934 synthetic control map"
+  },
+  {
+    "objectID": "src/drc.html#project-1359",
+    "href": "src/drc.html#project-1359",
+    "title": "3  Democratic Republic of Congo",
+    "section": "3.2 Project-1359",
+    "text": "3.2 Project-1359\n\n\n\n\n\nFigure 3.3: DRC-Project-1359 synthetic control; comprising 3 donors from a potential pool of 41 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.5\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 3.4: DRC-Project-1359 synthetic control map"
+  },
+  {
+    "objectID": "src/tanzania.html#project-1325",
+    "href": "src/tanzania.html#project-1325",
+    "title": "4  Tanzania",
+    "section": "4.1 Project-1325",
+    "text": "4.1 Project-1325\n\n\n\n\n\nFigure 4.1: Tanzania-Project-1325 synthetic control; comprising 8 donors from a potential pool of 84 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.3\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4.2: Tanzania-Project-1325 synthetic control map"
+  },
+  {
+    "objectID": "src/tanzania.html#project-1897",
+    "href": "src/tanzania.html#project-1897",
+    "title": "4  Tanzania",
+    "section": "4.2 Project-1897",
+    "text": "4.2 Project-1897\n\n\n\n\n\nFigure 4.3: Tanzania-Project-1897 synthetic control; comprising 5 donors from a potential pool of 59 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.1\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4.4: Tanzania-Project-1897 synthetic control map"
+  },
+  {
+    "objectID": "src/tanzania.html#project-1900",
+    "href": "src/tanzania.html#project-1900",
+    "title": "4  Tanzania",
+    "section": "4.3 Project-1900",
+    "text": "4.3 Project-1900\n\n\n\n\n\nFigure 4.5: Tanzania-Project-1900 synthetic control; comprising 1 donors from a potential pool of 40 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.2\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 4.6: Tanzania-Project-1900 synthetic control map"
+  },
+  {
+    "objectID": "src/zambia.html#project-17752",
+    "href": "src/zambia.html#project-17752",
+    "title": "5  Zambia",
+    "section": "5.1 Project-17752",
+    "text": "5.1 Project-17752\n\n\n\n\n\nFigure 5.1: Zambia-Project-17752 synthetic control; comprising 2 donors from a potential pool of 208 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.2\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5.2: Zambia-Project-17752 synthetic control map"
+  },
+  {
+    "objectID": "src/zambia.html#project-17753",
+    "href": "src/zambia.html#project-17753",
+    "title": "5  Zambia",
+    "section": "5.2 Project-17753",
+    "text": "5.2 Project-17753\n\n\n\n\n\nFigure 5.3: Zambia-Project-17753 synthetic control; comprising 4 donors from a potential pool of 107 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.3\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5.4: Zambia-Project-17753 synthetic control map"
+  },
+  {
+    "objectID": "src/zambia.html#project-1202",
+    "href": "src/zambia.html#project-1202",
+    "title": "5  Zambia",
+    "section": "5.3 Project-1202",
+    "text": "5.3 Project-1202\n\n\n\n\n\nFigure 5.5: Zambia-Project-1202 synthetic control; comprising 6 donors from a potential pool of 292 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.4\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 5.6: Zambia-Project-1202 synthetic control map"
+  },
+  {
+    "objectID": "src/cambodia.html#project-904",
+    "href": "src/cambodia.html#project-904",
+    "title": "6  Cambodia",
+    "section": "6.1 Project-904",
+    "text": "6.1 Project-904\n\n\n\n\n\nFigure 6.1: Cambodia-Project-904 synthetic control; comprising 3 donors from a potential pool of 43 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.3\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6.2: Cambodia-Project-904 synthetic control map"
+  },
+  {
+    "objectID": "src/cambodia.html#project-1650",
+    "href": "src/cambodia.html#project-1650",
+    "title": "6  Cambodia",
+    "section": "6.2 Project-1650",
+    "text": "6.2 Project-1650\n\n\n\n\n\nFigure 6.3: Cambodia-Project-1650 synthetic control; comprising 1 donors from a potential pool of 27 donors. The donor pool subset is based on a buffer deforestation threshold value of 0.1\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 6.4: Cambodia-Project-1650 synthetic control map"
+  }
+]
