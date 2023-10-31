@@ -1,7 +1,7 @@
 #' @title generate county level map layers
 #' @param country_name character; name of the country
 #' @return list of sf objects
-ountry_map_lyrs <- function(country_name) {
+country_map_lyrs <- function(country_name) {
   safe_create("geo-data")
   # read the spatial data for Colombia from West
   country_dbf <- dp(
