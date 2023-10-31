@@ -1,3 +1,12 @@
+#' @title run the synthetic control algorithm
+#' @param project_data the output from `sc_project_data`
+#' @param i numeric; the iteration number
+#' @param seed numeric; the seed for the random number generator
+#' @param predictors_list character; the list of predictors to use in the model
+#' @param donor_prop numeric; the proportion of donors to use in the model
+#' @param min_donors numeric; the minimum number of donors to use in the model
+#' @return list of results
+#'
 synth_control_run <- function(
     project_data,
     i = 0,
@@ -116,6 +125,10 @@ synth_control_run <- function(
   ))
 }
 
+#' get the spatial locations of the donors for a given project.
+#' @param sc the output from `synth_control_run`
+#' @param west_spatial the output from `read_west_spatial`
+#' @return an sf object with the spatial locations of the donors
 locate_donors <- function(sc, west_spatial) {
   synth_donors <- sc$sc_result$s_weights
 
@@ -130,6 +143,9 @@ locate_donors <- function(sc, west_spatial) {
     )
 }
 
+#' count the number of donors used in the SC
+#' @param sc the output from `synth_control_run`
+#' @return a list with the number of donors used in the SC
 count_donors <- function(sc) {
   synth_donors <- sc$sc_result$s_weights
   n_donors <- nrow(synth_donors)

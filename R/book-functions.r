@@ -1,5 +1,7 @@
-country_map_lyrs <- function(country_name) {
-  safe_create("leaf-maps")
+#' @title generate county level map layers
+#' @param country_name character; name of the country
+#' @return list of sf objects
+ountry_map_lyrs <- function(country_name) {
   safe_create("geo-data")
   # read the spatial data for Colombia from West
   country_dbf <- dp(
@@ -39,7 +41,15 @@ country_map_lyrs <- function(country_name) {
   ))
 }
 
-
+#' @title create interactive donor map.
+#' @param proj_donors sf object of the donors
+#' @param country_spat sf object of the country
+#' @param country_name character; name of the country
+#' @param project_area sf object of the project area
+#' @param proj_num numeric; the project number
+#' @param ecoregions sf object of the ecoregions
+#' @param states sf object of the states
+#' @return leaflet object
 donor_leaf_map <- function(
     proj_donors,
     country_spat, country_name, project_area, proj_num,
@@ -91,4 +101,16 @@ donor_leaf_map <- function(
     leaflet::hideGroup(c("Ecoregions", "States")) |>
     leaflet::addScaleBar(position = "bottomleft")
   ml
+}
+
+#' generate the base tmap object.
+#' @import ggplot2
+#' @import dplyr
+#' @import magrittr
+#' @importFrom ./R/workflow_setup.R set_path
+tm_basic <- function() {
+  tmap::tm_basemap(tmap::providers$CartoDB.Positron) +
+    tmap::tm_basemap(tmap::providers$OpenStreetMap) +
+    tmap::tm_basemap(tmap::providers$Esri.WorldImagery) +
+    tmap::tm_basemap(tmap::providers$CartoDB.DarkMatter)
 }

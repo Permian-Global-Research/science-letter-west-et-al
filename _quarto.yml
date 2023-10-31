@@ -39,6 +39,14 @@ book:
       orcid: "0000-0002-4339-0833"
       affiliations:
           - ref: pg
+    - name: "David F.R.P. Burslem"
+      orcid: "0000-0001-6033-0990"
+      affiliations:
+          - id: aberdeen
+            name: University of Aberdeen
+            department: School of Biological Sciences
+            city: Aberdeen
+            postal-code: AB24 3UU
     - name: "Christopher Philipson"
       orcid: "0000-0001-8987-7260"
       affiliations:

@@ -1,15 +1,10 @@
+# R script to produce the map presented in the main letter in response to
+# West, et al. 2023. Focus here is on Colombia project 856.
+
+# to generate reproducible R package versions.
 renv::restore()
-# Source all R files in the R directory
+# Source all R files in the R directory and load necessary packages.
 source("R/load-all.r")
-# West packages
-library(plyr)
-library(Synth) # synthetic control package
-library(MSCMT) # for a more robust optimization procedure
-library(foreign)
-
-# additional packages are loaded from files in 'R/' directly.
-
-
 
 # Set up out paths:
 safe_create("geo-data")
@@ -17,10 +12,11 @@ safe_create("figures")
 
 # Extract data included in the repo - downloaded from:
 # https://dataverse.nl/dataset.xhtml?persistentId=doi:10.34894/IQC9LM
+# Note this may fail if 7z is not installed on your system.
 extract_west_data()
 
 # - Colombia Project 856 -------------------------------------------------------
-
+# run the synthetic control algorithm
 col_856_donor_list <- sc_wrap_recursive(
   filepath = dp("Colombia_synth_control_data.csv"),
   dbf_file = dp(
