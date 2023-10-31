@@ -5,3 +5,6 @@ west-data
 /.quarto/
 /_book/*
 /scratch/*
+
+.lintr
+.vscode/*
