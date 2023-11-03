@@ -1,15 +1,15 @@
 ## Preface {.unnumbered}
 Contained in this web book are interactive maps for each of the projects considered
 in West et al. @west_action_2023. We focus here on the project-level analysis, 
-undertaken as part of this publication, where the authors constructed synthetic 
+undertaken as part of that publication, where the authors constructed synthetic 
 controls (SC) from randomly distributed circular donors from across the country of 
 each project. In the [supplementary materials](https://dataverse.nl/dataset.xhtml?persistentId=doi:10.34894/IQC9LM) for the paper, only the code to 
 reproduce results for the *Colombian Project 856* were provided. 
 
 We have attempted to reproduce the results across all considered projects in an 
-attempt to evaluate whether potential issues, identified for project 856 exist 
+attempt to evaluate whether potential issues, identified for project 856, exist 
 more generally for other project synthetic controls. Further, it is an opportunity 
-for us as researchers to gain a greater understanding of how the proposed method
+for us, as researchers, to gain a greater understanding of how the proposed method
 works.
 
 In order to reproduce the results for the remaining sites, we are missing 

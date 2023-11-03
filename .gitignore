@@ -8,3 +8,5 @@ west-data
 
 .lintr
 .vscode/*
+
+*.gz

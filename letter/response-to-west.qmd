@@ -1,0 +1,20 @@
+# Response to West et al. (2023) 
+
+Avoided Deforestation Conservation Projects (ADCP) must deliver carbon emission reductions and necessitate comparisons between observations in protected forests and counterfactual scenarios @balmford_realizing_2023. West et al. @west_action_2023 used the synthetic control (SC) method to choose pools of controls with similar covariate structure to ADCPs. SCs were calculated from the mean deforestation rate of pools, weighted by covariate similarity with the project. We agree SC could improve the evaluation of ADCP. However, SC are also vulnerable to “gaming” or bias through inappropriate donor pool design/sampling and require refinement @balmford_realizing_2023 before they can improve upon existing ADCP approaches. 
+
+West et al. @west_action_2023 claim that most ADCPs overestimate avoided deforestation or do not significantly reduce deforestation. These conclusions are poorly supported by their analysis because: 
+
+- The implemented SC approach can suffer from bias @abadie_using_2021 due to substantial and incompatible differences between deforestation drivers, forest type and (bio)geography that are not adequately captured. Important covariates are ignored, such as distance to roads and rivers [@laurance_roads_2017; @barber_roads_2014], fire risk @amador-jimenez_unintended_2020, or indicators of forest structure @duncanson_aboveground_2022 that predict biomass, timber value and logging effort. Using the authors’ code, we extracted the locations of controls used to create the SC for project-856 (@fig-map), located in Colombia’s Pacific-montane-forest. No weighted donors were in the same political jurisdiction or ecoregion as the project and the highest weighted donor (0.46) was in the Amazon, 900 km away. 
+
+- Calculations derived from Global Forest Change (GFC) @hansen_quantification_2010 inherit known sensitivity and accuracy issues [@kinnebrew_biases_2022; @galiatsatos_assessment_2020]. It is inappropriate to compare GFC-based calculations with those reported by projects, which are better calibrated for local contexts, because meaningful comparisons require deforestation rates to be derived using identical methods. Further, it is accepted that GFC is inappropriate for site-level deforestation assessment, in isolation [@galiatsatos_assessment_2020; @bos_global_2019]. 
+
+- West et al. @west_action_2023 do not demonstrate that SC counterfactuals are more accurate than project methods, undermining their ability to interpret differences between the SC and project-reported deforestation rates. 
+
+![Map of the donor pool and their weighted contribution to the Synthetic Control for Project-856. The project is located to the north of Colombia's Choco Department, in the Darien Mountain range and comprises a transition from lowland to montane rainforest. Also presented are ecoregions @dinerstein_ecoregion-based_2017 that intersect weighted donors. Project-856 was selected because it was the only one where fully reproducible code was made available. To see interactive maps of this and all other projects please see [https://permian-global-research.github.io/science-letter-west-et-al/](https://permian-global-research.github.io/science-letter-west-et-al/). Elevation data from https://registry.opendata.aws/terrain-tiles.](figures/colombia_856_donors.png){#fig-map}
+
+{{< pagebreak >}}
+
+## References
+
+::: {#refs}
+:::

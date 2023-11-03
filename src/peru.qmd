@@ -1,7 +1,5 @@
 # Peru
 
-Here are some maps for Peru...
-
 
 ```{r}
 #| label: Peru-loading
@@ -215,7 +213,7 @@ donor_leaf_map(
 ```
 
 ## Project-1182
-We were unable to reproduce a reasonable synthetic control for this project...
+
 ```{r}
 #| label: fig-Peru-1182
 #| fig-cap: !expr paste0("Peru-Project-1182 synthetic control; comprising ", proj_1182_count$n_weighted, " donors from a potential pool of ", proj_1182_count$n_pot, " donors. The donor pool subset is based on a buffer deforestation threshold value of ", proj_1182_donors_l$cutoff)
@@ -223,7 +221,6 @@ We were unable to reproduce a reasonable synthetic control for this project...
 #| message: false
 #| warning: false
 #| results: hide
-#| eval: false
 
 project_1182 <- west_extract_proj_area(peru_lyrs$country_sc_sp, 1182)
 
@@ -255,7 +252,6 @@ proj_1182_donors <- proj_1182_donors_l |>
 #| echo: false
 #| message: false
 #| warning: false
-#| eval: false
 
 donor_leaf_map(
   proj_donors = proj_1182_donors,

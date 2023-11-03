@@ -30,8 +30,10 @@ col_856_donor_list <- sc_wrap_recursive(
   cutoff_start = 0.2
 )
 
-count_donors(col_856_donor_list)
-
+dc <- count_donors(col_856_donor_list)
+cli::cli_alert_info(
+  "{dc$n_weighted} donors used in the SC out of a pool of {dc$n_pot}"
+)
 # read the spatial data for Colombia from West
 sc_columbia_sp <- read_west_spatial("Colombia_polygons.shp")
 
@@ -60,6 +62,6 @@ p <- donor_ggplot_map(
   hillshade
 )
 
-ggplot2::ggsave("figures/colombia_856_donors.png", p,
+ggplot2::ggsave("letter/figures/colombia_856_donors.png", p,
   width = 10, height = 10, bg = "white"
 )

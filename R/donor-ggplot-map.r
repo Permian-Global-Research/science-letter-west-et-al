@@ -164,7 +164,7 @@ generate_eco_regions <- function(project_area, donors, country) {
     )
 
   donor_wgs <- sf::st_transform(
-    dplyr::filter(donors, zero == "non-zero"),
+    dplyr::filter(donors, `Donor mean SC weight` > 0),
     sf::st_crs(eco_reg)
   ) |>
     dplyr::select(geometry) |>

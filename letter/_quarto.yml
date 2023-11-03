@@ -1,0 +1,62 @@
+title: "Response to *West et al. (2023)*"
+format:
+  elsevier-pdf:
+    keep-tex: true   
+    journal:
+      name: Science
+      cite-style: number
+      model: 3p
+      
+
+author: 
+  - name: "Hugh A. Graham"
+    orcid: "0000-0001-9451-5010"
+    email: "hugh.graham@permianglobal.com"
+    affiliations:
+    - id: pg
+      name: Permian Global Research Ltd.
+      address: 3 Cavendish Square
+      city: London
+      postal-code: W1G 0LB 
+    - id: exeter
+      name: University of Exeter
+      department: Geography, Faculty of Environment, Science and Economy
+    attributes:
+      corresponding: true
+  - name: "Andrew M. Cunliffe"
+    orcid: "0000-0002-8346-4278"
+    affiliations:
+      - ref: exeter
+  - name: "Edward T.A. Mitchard"
+    orcid: "0000-0002-5690-4055"
+    affiliations:
+      - id: si
+        name: Space Intelligence Ltd.
+        address: 93 George Street
+        city: Edinburgh
+        postal-code: EH2 3ES
+  - name: "Javier Ruiz Ramos"
+    orcid: "0000-0003-4210-3887"
+    affiliations:
+        - ref: pg
+  - name: "Leonardo Sáenz"
+    orcid: "0000-0002-4339-0833"
+    affiliations:
+        - ref: pg
+  - name: "David F.R.P. Burslem"
+    orcid: "0000-0001-6033-0990"
+    affiliations:
+        - id: aberdeen
+          name: University of Aberdeen
+          department: School of Biological Sciences
+          city: Aberdeen
+          postal-code: AB24 3UU
+  - name: "Christopher Philipson"
+    orcid: "0000-0001-8987-7260"
+    email: "christopher.philipson@permianglobal.com"
+    attributes:
+        corresponding: true
+    affiliations:
+        - ref: pg
+
+bibliography: bibliography.bib

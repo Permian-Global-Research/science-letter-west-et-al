@@ -1,0 +1,18 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.2)  2 NOV 2023 11:37
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**pdflatex response-to-west.tex
+! Emergency stop.
+<*> pdflatex 
+             response-to-west.tex 
+Here is how much of TeX's memory you used:
+ 2 strings out of 477034
+ 18 string characters out of 5808108
+ 1915664 words of memory out of 5000000
+ 21851 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 0i,0n,0p,1b,6s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+No pages of output.

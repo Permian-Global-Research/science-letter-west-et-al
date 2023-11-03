@@ -1,0 +1,36 @@
+author: 
+  - name: "Hugh A. Graham, &nbsp;"
+    email: "hugh.graham@permianglobal.com"
+    affiliations:
+    - id: pg
+      name: Permian Global Research Ltd.
+      address: 3 Cavendish Square
+      city: London
+      postal-code: W1G 0LB 
+    attributes:
+      corresponding: true
+  - name: "Andrew M. Cunliffe, &nbsp;"
+  - name: "Edward T.A. Mitchard, &nbsp;"
+  - name: "Javier Ruiz Ramos, &nbsp;"
+  - name: "Leonardo Sáenz, &nbsp;"
+  - name: "David F.R.P. Burslem, &nbsp;"
+  - name: "Christopher Philipson <br> "
+address:
+  - 
+subject: A letter response to West, et al. (2023)
+subject-title: "Subject"
+opening: "Dear Dr. Jesse Smith,"
+closing: "Yours Faithfully,"
+ps: |
+  *References cited in this letter:*
+
+  \footnotesize
+
+  ::: {#refs} 
+  :::
+format: letter-pdf
+header-includes:
+ - \usepackage{wrapfig}
+
+
+bibliography: bibliography.bib
