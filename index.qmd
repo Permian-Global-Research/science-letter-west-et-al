@@ -1,4 +1,4 @@
-# eLetter {.unnumbered}
+# eLetter {.unnumbered} 
 
 Avoided deforestation conservation projects necessitate comparisons between observations in protected forests and what-would-have-happened if the project did not exist (often referred to as the baseline, or counterfactual scenario) @balmford_realizing_2023. Nevertheless, it is imperative that forest carbon projects deliver the carbon emission reductions they report, and there are various methods that can be used to estimate these counterfactual scenarios. West et al. @west_action_2023 used the synthetic control method to choose pools of controls with similar covariate structure to *avoided unplanned deforestation conservation project* areas; they do not consider other methodologies such as *planned avoided deforestation*, or *improved forest management*. Synthetic controls were calculated from the mean deforestation rate of pools, weighted by covariate similarity with the project. We agree that the synthetic control method could potentially improve the evaluation of forest carbon projects. However, synthetic controls are also vulnerable to “gaming” or bias through inappropriate donor pool design/sampling and such econometric statistical methods require further context-specific refinement @balmford_realizing_2023 before they can improve upon existing approaches. 
 
@@ -25,4 +25,4 @@ No method of reconstructing a counterfactual can claim to represent absolute tru
 
 <br/><br/>
 
-*The pdf version of this eLetter is available [here](letter/response-to-west.pdf).*
+*The pdf version of this eLetter is available here: [<i class="bi bi-file-earmark-pdf"></i>](letter/response-to-west.pdf).*
