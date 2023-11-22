@@ -1,4 +1,4 @@
-# Tanzania
+# Tanzania {.unnumbered}
 
 
 ```{r}

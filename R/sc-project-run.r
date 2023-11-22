@@ -139,7 +139,7 @@ locate_donors <- function(sc, west_spatial) {
     ) |>
     dplyr::select(
       "Polygon-ID" = polygon_ID,
-      "Donor mean SC weight" = w.weight
+      "Synthetic control weight" = w.weight
     )
 }
 

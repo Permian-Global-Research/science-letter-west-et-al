@@ -57,7 +57,7 @@ donor_leaf_map <- function(
   project_name <- paste0("Project-", proj_num)
   project_area$`Project area` <- project_name
   tmap::tmap_mode("view")
-  n_weights <- length(unique(proj_donors$`Donor mean SC weight`))
+  n_weights <- length(unique(proj_donors$`Synthetic control weight`))
   donor_pal <- c("#bdbdbd", cols4all::c4a("tol.rainbow_wh_br", n_weights - 1))
   m <- tm_basic() +
     tmap::tm_shape(country_spat, name = country_name) +
@@ -93,7 +93,7 @@ donor_leaf_map <- function(
     ) +
     tmap::tm_shape(proj_donors, name = paste0(project_name, " Donors")) +
     tmap::tm_polygons(
-      fill = NA, col = "Donor mean SC weight", popup.vars = TRUE,
+      fill = NA, col = "Synthetic control weight", popup.vars = TRUE,
       col.scale = tmap::tm_scale_categorical(values = donor_pal),
       lwd = 5
     )

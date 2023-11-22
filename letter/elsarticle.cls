@@ -1011,8 +1011,8 @@
          \ifx\@elsarticlemyfooteralign\@elsarticlemyfooteralignright%
            {}\hfill\@elsarticlemyfooter%
          \else%
-               Letter submitted to \ifx\@journal\@empty%
-                 Elsevier%
+                \ifx\@journal\@empty%
+                 Elsevier% 
             \else\@journal\fi\hfill\@date\fi%
          \fi%
          \fi%

@@ -1,4 +1,4 @@
-# Cambodia
+# Cambodia {.unnumbered}
 
 ```{r}
 #| label: Cambodia-loading
