@@ -1,6 +1,6 @@
 # A letter response to West, et al. (2023)
 
-This repository contains the source code for a letter response to 
+This repository contains the source code for an eLetter response to 
 [West, et al. (2023)](https://www.science.org/doi/10.1126/science.ade3535).
 
 It contains refactored code to reproduce some of the results of the original paper,
