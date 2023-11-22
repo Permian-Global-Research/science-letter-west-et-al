@@ -54,13 +54,16 @@ book:
   repo-url: https://github.com/Permian-Global-Research/science-letter-west-et-al
   navbar:
     search: false
+    right:
+        - icon: file-earmark-pdf-fill
+          href: "https://github.com/Permian-Global-Research/science-letter-west-et-al/blob/6ec5c8986f346a1a22a25636aa73e60b69226613/letter/response-to-west.pdf"
 
 
 
   date: "today"
   chapters:
     - index.qmd
-    # - src/references.qmd
+    - src/about.qmd
     - part: "Interactive maps"
       chapters:
         - src/colombia.qmd
@@ -70,7 +73,7 @@ book:
         - src/zambia.qmd
         - src/cambodia.qmd
 
-bibliography: src/references.bib
+bibliography: src/bibliography.bib
 csl: src/nature-no-et-al.csl
 format:
   html:

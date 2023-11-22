@@ -59,8 +59,8 @@ donor_ggplot_map <- function(
     ggplot2::geom_sf(
       data = donr_centroids,
       mapping = ggplot2::aes(
-        fill = `Donor mean SC weight`,
-        size = `Donor mean SC weight`
+        fill = `Synthetic control weight`,
+        size = `Synthetic control weight`
       ),
       colour = "black",
       pch = 21
@@ -164,7 +164,7 @@ generate_eco_regions <- function(project_area, donors, country) {
     )
 
   donor_wgs <- sf::st_transform(
-    dplyr::filter(donors, `Donor mean SC weight` > 0),
+    dplyr::filter(donors, `Synthetic control weight` > 0),
     sf::st_crs(eco_reg)
   ) |>
     dplyr::select(geometry) |>

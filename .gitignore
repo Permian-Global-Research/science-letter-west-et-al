@@ -10,3 +10,4 @@ west-data
 .vscode/*
 
 *.gz
+.obsidian/

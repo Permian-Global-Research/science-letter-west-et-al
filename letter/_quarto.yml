@@ -1,9 +1,11 @@
 title: "Response to *West et al. (2023)*"
 format:
   elsevier-pdf:
+    fig-pos: "H"
+    tbl-pos: "H"
     keep-tex: true   
     journal:
-      name: Science
+      name: Science eLetter
       cite-style: number
       model: 3p
       
@@ -51,7 +53,7 @@ author:
           department: School of Biological Sciences
           city: Aberdeen
           postal-code: AB24 3UU
-  - name: "Christopher Philipson"
+  - name: "Christopher D. Philipson"
     orcid: "0000-0001-8987-7260"
     email: "christopher.philipson@permianglobal.com"
     attributes:
